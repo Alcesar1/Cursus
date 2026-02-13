@@ -8,6 +8,7 @@ OBJ_DIR = obj
 
 SRCS =	main.c \
 		check.c \
+		push_swap_utils.c \
 
 SRCS := $(addprefix $(SRC_DIR)/,$(SRCS))
 OBJS := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))

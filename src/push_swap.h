@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alex GEOFFROY <ageoffro@student.42lausanne +#+  +:+       +#+        */
+/*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 10:06:17 by jvasconc       #  #+#    #+#             */
-/*   Updated: 2026/02/10 13:20:59 by Alex GEOFFROY    ###   ########.fr       */
+/*   Created: 2025/12/27 10:06:17 by jvasconc          #+#    #+#             */
+/*   Updated: 2026/02/13 11:16:25 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,30 +23,34 @@ typedef struct s_node
 	struct s_node	*next;
 }	t_node;
 
-typedef struct s_data
+typedef struct s_base
 {
 	t_node		*stack_a;
 	t_node		*stack_b;
-	char		**tab;
-	int			nb_args;
-	int			digit_to_find;
-	int			count_of_digit;
-	int			max_digit;
-	int			modulo;
-	int			cur_stack;
-	int			stack_size;
-	int			is_it_sorted;
-	int			who_s_next;
-	int			where_s_next;
-	int			index_to_find;
-	int			where_s_index;
-}	t_data;
+	int			i;
+	int			j;
+	int			k;
+	char		**tmp;
+	int			*tab;
+	long		nbrl;
+	int			size;
+}	t_base;
 
-char **final_tab(t_data *data);
+
+//free
+void	free_array(char **array);
+void	ft_error_exit(t_base *base);
+
+//str* to int* checked
+int		*str_to_tab_of_int(char **av, t_base *base);
+void	ft_isnumber(char *c, t_base *base);
+void	check_limits(t_data *data);
+int		check_double(t_base *base);
+long	ft_atol(const char *nptr);
+int		count_numbers(char **av, t_base *base);
+int		*fill_tab_of_int(char **tab, t_base *base);
 
 /*
-void	ft_isnumber(char *c);
-
 //preparation before algorithm
 t_ctx	*preparation_before_algorithm(t_ctx *ctx);
 
