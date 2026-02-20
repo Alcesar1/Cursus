@@ -6,9 +6,9 @@ LIBFT = $(LIBFT_DIR)/libft.a
 SRC_DIR = src
 OBJ_DIR = obj
 
-SRCS =	main.c \
-		check.c \
-		push_swap_utils.c \
+SRCS =	main.c check.c push_swap_utils.c stack_init_and_index.c \
+		swap_move.c push_move.c rotate_move.c reverse_move.c \
+		algo.c \
 
 SRCS := $(addprefix $(SRC_DIR)/,$(SRCS))
 OBJS := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))

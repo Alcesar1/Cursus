@@ -6,7 +6,7 @@
 /*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 15:13:42 by ageoffro          #+#    #+#             */
-/*   Updated: 2026/02/11 08:42:51 by Alex GEOFFR      ###   ########.fr       */
+/*   Updated: 2026/02/16 09:03:12 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void*));
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (del)(void *));
+
+long	ft_atol(const char *nptr);
 
 #endif

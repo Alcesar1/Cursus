@@ -6,16 +6,18 @@
 /*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 11:35:03 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2026/02/13 11:32:21 by Alex GEOFFR      ###   ########.fr       */
+/*   Updated: 2026/02/19 11:28:41 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int *str_to_tab_of_int(char **av, t_base *base)
+int	*str_to_tab_of_int(char **av, t_base *base)
 {
 	base->size = count_numbers(av, base);
-	base->tab = ft_calloc((base->size),sizeof(int));
+	if (base->size == 0)
+		return (NULL);
+	base->tab = ft_calloc((base->size), sizeof(int));
 	if (!base->tab)
 		return (NULL);
 	return (fill_tab_of_int(av, base));
@@ -33,7 +35,7 @@ int	count_numbers(char **av, t_base *base)
 	{
 		i = 0;
 		base->tmp = ft_split(av[j], ' ');
-		if(!base->tmp)
+		if (!base->tmp)
 			return (0);
 		while (base->tmp[i] != NULL)
 			i++;
@@ -42,7 +44,7 @@ int	count_numbers(char **av, t_base *base)
 		count += i;
 		j++;
 	}
-	return(count);
+	return (count);
 }
 
 void	ft_isnumber(char *c, t_base *base)
@@ -53,7 +55,7 @@ void	ft_isnumber(char *c, t_base *base)
 	if (c[0] == '\0')
 		ft_error_exit(base);
 	if ((c[i] == '-' || c[i] == '+') && c[i + 1] != '\0')
-			i++;
+		i++;
 	while (c[i] != '\0')
 	{
 		if (ft_isdigit(c[i]))
@@ -71,16 +73,16 @@ int	*fill_tab_of_int(char **av, t_base *base)
 	{
 		base->i = 0;
 		base->tmp = ft_split(av[base->j], ' ');
-		if (base->tmp[base->i] == 0)
-			return (free(base->tmp), base->tmp = NULL, NULL);
+		if (!base->tmp[base->i])
+			return (NULL);
 		while (base->tmp[base->i] != NULL)
 		{
 			ft_isnumber(base->tmp[base->i], base);
 			base->nbrl = ft_atol(base->tmp[base->i]);
-				if (base->nbrl < INT_MIN || base->nbrl > INT_MAX)
-					ft_error_exit(base);
-				else
-					base->tab[base->k] = base->nbrl; 
+			if (base->nbrl < INT_MIN || base->nbrl > INT_MAX)
+				ft_error_exit(base);
+			else
+				base->tab[base->k] = base->nbrl;
 			base->k++;
 			base->i++;
 		}
@@ -88,7 +90,8 @@ int	*fill_tab_of_int(char **av, t_base *base)
 		free_array(base->tmp);
 		base->tmp = NULL;
 	}
-	return(base->tab);
+	check_double(base);
+	return (base->tab);
 }
 
 int	check_double(t_base *base)
@@ -105,11 +108,10 @@ int	check_double(t_base *base)
 		{
 			if (base->tab[i] == base->tab[j])
 				ft_error_exit(base);
-			else 
+			else
 				j++;
 		}
 		i++;
 	}
 	return (0);
 }
-

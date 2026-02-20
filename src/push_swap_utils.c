@@ -6,7 +6,7 @@
 /*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:13:18 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2026/02/13 11:28:04 by Alex GEOFFR      ###   ########.fr       */
+/*   Updated: 2026/02/19 11:05:06 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	free_array(char **array)
 		i++;
 	}
 	free(array);
-	return ;
 }
 
 void	ft_error_exit(t_base *base)
@@ -34,40 +33,48 @@ void	ft_error_exit(t_base *base)
 		return ;
 	if (base)
 	{
-		if(base->tab)
+		if (base->tab)
 			free(base->tab);
 		free_array(base->tmp);
 		base->tmp = NULL;
+		if (base->stack_a)
+			free_stack(base->stack_a);
+		if (base->stack_b)
+			free_stack(base->stack_b);
 	}
-	ft_printf("Error\n");
+	ft_putendl_fd("Error", 2);
 	exit(1);
 }
 
-long	ft_atol(const char *nptr)
+void	free_stack(t_node *stack)
 {
-	int		i;
-	long	result;
-	int		neg;
+	t_node	*tmp;
 
-	neg = 1;
-	i = 0;
-	result = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	if (nptr[i] == '-')
+	while (stack)
 	{
-		neg = -1;
-		i++;
+		tmp = stack->next;
+		free(stack);
+		stack = tmp;
 	}
-	else if (nptr[i] == '+')
-		i++;
-	if (!(nptr[i] >= '0' && nptr[i] <= '9'))
-		return (0);
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		result = result * 10 + nptr[i] - 48;
-		i++;
-	}
-	return (result * neg);
 }
 
+int	check_args(int ac, char **av)
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	while (j < ac)
+	{
+		if (!av[j] || !av[j][0])
+			return (0);
+		i = 0;
+		while (av[j][i] && (av[j][i] == ' ' ||
+				(av[j][i] >= 9 && av[j][i] <= 13)))
+			i++;
+		if (!av[j][i])
+			return (0);
+		j++;
+	}
+	return (1);
+}

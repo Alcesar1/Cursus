@@ -6,7 +6,7 @@
 /*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 14:12:50 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2026/02/13 09:46:57 by Alex GEOFFR      ###   ########.fr       */
+/*   Updated: 2026/02/19 14:33:53 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,19 @@
 int	main(int ac, char **av)
 {
 	t_base	base;
-	int		i;
 	int		*tab;
 
-	tab = NULL;
-	(void) ac;
-	i = 0;
 	ft_bzero(&base, sizeof(t_base));
+	if (ac < 2 || !check_args(ac, av))
+		return (0);
 	tab = str_to_tab_of_int(av, &base);
-	check_double(&base);
-	i = 0;
-	while (i < base.size)
-	{
-		ft_printf("%d\n", tab[i]);
-		i++;
-	}
+	if (!tab)
+		return (0);
+	base = *fill_stack(&base);
+	index_stack(&base);
+	radix_sort(&base);
 	free(tab);
-	return (/*ft_error_exit(&base)*/ 0);
+	free_stack(base.stack_a);
+	free_stack(base.stack_b);
+	return (0);
 }
-
-
