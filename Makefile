@@ -8,7 +8,7 @@ OBJ_DIR = obj
 
 SRCS =	main.c check.c push_swap_utils.c stack_init_and_index.c \
 		swap_move.c push_move.c rotate_move.c reverse_move.c \
-		algo.c \
+		algo.c three_and_less.c four_and_five.c\
 
 SRCS := $(addprefix $(SRC_DIR)/,$(SRCS))
 OBJS := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   five_and_less.c                                    :+:      :+:    :+:   */
+/*   three_and_less.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 14:33:16 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2026/02/20 13:59:13 by Alex GEOFFR      ###   ########.fr       */
+/*   Updated: 2026/02/25 10:28:10 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,17 @@ void	for_three(t_base *base)
 	if (a < b && a < c && c < b)
 	{
 		swap_a(base);
-		rotate_a(base);.
+		rotate_a(base);
 	}
 	else if (a > b && c > a && c > b)
 		swap_a(base);
-	else if (a < b && b > c && c > a)
+	else if (a < b && b > c && c < a)
 		reverse_rotate_a(base);
 	else if (a > b && a > c && c >b)
 		rotate_a(base);
-	else if (a>b && a > c && c < b)
+	else if (a > b && a > c && c < b)
 	{
 		swap_a(base);
 		reverse_rotate_a(base);
 	}
-}
-
-void	for_four(t_base *base)
-{
-
-	for_three(base);
-}
-
-void	for_five(t_base *base)
-{
-	
 }
