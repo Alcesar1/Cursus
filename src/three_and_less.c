@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   three_and_less.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 14:33:16 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2026/02/25 10:28:10 by alex             ###   ########.fr       */
+/*   Updated: 2026/02/28 13:25:51 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	for_three(t_base *base)
 		swap_a(base);
 	else if (a < b && b > c && c < a)
 		reverse_rotate_a(base);
-	else if (a > b && a > c && c >b)
+	else if (a > b && a > c && c > b)
 		rotate_a(base);
 	else if (a > b && a > c && c < b)
 	{

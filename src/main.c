@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 14:12:50 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2026/02/25 09:47:57 by alex             ###   ########.fr       */
+/*   Updated: 2026/02/28 14:39:31 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 	int		*tab;
 
 	ft_bzero(&base, sizeof(t_base));
-	if (ac < 2 || !check_args(ac, av))
+	if (ac < 3 || !check_args(ac, av))
 		return (0);
 	tab = str_to_tab_of_int(av, &base);
 	if (!tab)
@@ -27,7 +27,7 @@ int	main(int ac, char **av)
 	index_stack(&base);
 	if (base.size == 2)
 		for_two(&base);
-	else if (base.size == 3)
+	else if (base.size == 3 )
 		for_three(&base);
 	else if (base.size <= 5)
 		four_and_five(&base);
