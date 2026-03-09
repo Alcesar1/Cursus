@@ -6,7 +6,7 @@
 /*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 17:01:15 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2026/02/18 14:24:13 by Alex GEOFFR      ###   ########.fr       */
+/*   Updated: 2026/03/09 11:08:44 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	swap_a(t_base *base)
 {
 	int	tmp;
 
-	if (!base -> stack_a || base->stack_a -> next)
+	if (!(base -> stack_a || base->stack_a -> next))
 		return ;
 	tmp = base->stack_a->number;
 	base->stack_a->number = base->stack_a->next->number;
@@ -31,7 +31,7 @@ void	swap_b(t_base *base)
 {
 	int	tmp;
 
-	if (!base -> stack_b || base->stack_b -> next)
+	if (!(base -> stack_b || base->stack_b -> next))
 		return ;
 	tmp = base->stack_b->number;
 	base->stack_b->number = base->stack_b -> next->number;

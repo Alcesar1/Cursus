@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 10:06:17 by jvasconc          #+#    #+#             */
-/*   Updated: 2026/02/25 09:50:22 by alex             ###   ########.fr       */
+/*   Updated: 2026/03/09 13:30:32 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_base
 	long		nbrl;
 	int			size;
 	int			index_min;
+	int			size_a;
 }	t_base;
 
 //free
@@ -74,6 +75,7 @@ void	for_two(t_base *base);
 void	for_three(t_base *base);
 int		find_index_min(t_base *base);
 void	four_and_five(t_base *base);
+int		is_sorted(t_base *base);
 
 //algo
 int		max_bits(t_base *base);

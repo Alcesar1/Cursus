@@ -6,7 +6,7 @@
 /*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:13:18 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2026/02/19 11:05:06 by Alex GEOFFR      ###   ########.fr       */
+/*   Updated: 2026/03/09 15:46:14 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	check_args(int ac, char **av)
 		if (!av[j] || !av[j][0])
 			return (0);
 		i = 0;
-		while (av[j][i] && (av[j][i] == ' ' ||
+		while (av[j][i] && (av[j][i] == 32 ||
 				(av[j][i] >= 9 && av[j][i] <= 13)))
 			i++;
 		if (!av[j][i])
