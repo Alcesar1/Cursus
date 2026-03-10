@@ -1,16 +1,13 @@
-# Push_swap
+This project has been created as part of the 42 curriculum by ageoffro.
 
-Push_swap is a sorting algorithm project from the **42 School
-curriculum**.\
+# Descrition
+
+Push_swap is a sorting algorithm project from the ageoffro.
 The objective is to sort a stack of integers using a **limited set of
 operations** and two stacks.
 
 The challenge is not only to sort numbers, but to do it using the
 **fewest operations possible**.
-
-------------------------------------------------------------------------
-
-# Project Overview
 
 The program takes a list of integers as arguments and outputs the
 sequence of operations required to sort them in ascending order.
@@ -33,7 +30,7 @@ Output:
 
 ------------------------------------------------------------------------
 
-# Allowed Operations
+# Instructions
 
 ## Swap
 
@@ -66,10 +63,6 @@ Shift all elements down by one.
     rrb : reverse rotate stack B
     rrr : rra and rrb at the same time
 
-------------------------------------------------------------------------
-
-# Program Rules
-
 The program must:
 
 -   Handle **integer arguments**
@@ -81,8 +74,6 @@ The program must:
 If an error occurs:
 
     Error
-
-------------------------------------------------------------------------
 
 # Algorithms Used
 
@@ -144,6 +135,18 @@ Example output:
     sa
     pa
     pa
+
+------------------------------------------------------------------------
+
+# Testing
+
+You can test your program with the checker:
+
+    ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_linux $ARG
+
+Expected output:
+
+    OK
 
 ------------------------------------------------------------------------
 

@@ -6,7 +6,7 @@
 /*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:13:18 by Alex GEOFFR       #+#    #+#             */
-/*   Updated: 2026/03/09 15:46:14 by Alex GEOFFR      ###   ########.fr       */
+/*   Updated: 2026/03/10 10:30:34 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	check_args(int ac, char **av)
 	int	i;
 	int	j;
 
-	j = 0;
+	j = 1;
 	while (j < ac)
 	{
 		if (!av[j] || !av[j][0])
