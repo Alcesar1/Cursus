@@ -6,7 +6,7 @@
 /*   By: Alex GEOFFROY <ageoffro@student.42lausa    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 10:06:17 by jvasconc          #+#    #+#             */
-/*   Updated: 2026/03/09 13:30:32 by Alex GEOFFR      ###   ########.fr       */
+/*   Updated: 2026/03/11 11:03:29 by Alex GEOFFR      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	free_stack(t_node *stack);
 //str* to int* checked
 int		*str_to_tab_of_int(char **av, t_base *base);
 void	ft_isnumber(char *c, t_base *base);
-void	check_limits(t_data *data);
 int		check_double(t_base *base);
 int		count_numbers(char **av, t_base *base);
 int		*fill_tab_of_int(char **tab, t_base *base);

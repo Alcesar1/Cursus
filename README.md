@@ -1,16 +1,8 @@
+*This project has been created a part of the 42 curriculum by ageoffro.*
+
 # Push_swap
 
-Push_swap is a sorting algorithm project from the **42 School
-curriculum**.\
-The objective is to sort a stack of integers using a **limited set of
-operations** and two stacks.
-
-The challenge is not only to sort numbers, but to do it using the
-**fewest operations possible**.
-
-------------------------------------------------------------------------
-
-# Project Overview
+# Description
 
 The program takes a list of integers as arguments and outputs the
 sequence of operations required to sort them in ascending order.
@@ -30,8 +22,6 @@ Example:
 Output:
 
     sa
-
-------------------------------------------------------------------------
 
 # Allowed Operations
 
@@ -84,80 +74,26 @@ If an error occurs:
 
 ------------------------------------------------------------------------
 
-# Algorithms Used
+# Instructions
 
-Different strategies are used depending on the number of elements.
+Clone the repository and compile the project.
 
-### Small Inputs
-
-For small stacks:
-
--   **2 numbers** → simple swap
--   **3 numbers** → minimal sorting logic
--   **4--5 numbers** → push the smallest elements to stack B, sort the
-    rest, then push back
-
-### Large Inputs
-
-For larger stacks, a common solution is **Radix Sort**.
-
-Steps:
-
-1.  Convert numbers to **indexes**
-2.  Sort bits from least significant to most significant
-3.  Use `pb` and `ra` to distribute elements
-4.  Push everything back to stack A
-
-This approach allows efficient sorting for large datasets.
-
-------------------------------------------------------------------------
-
-# Compilation
-
-Use the Makefile:
-
+    git clone <repository_url>
+    cd push swap
     make
 
-This generates the executable:
+This will create an executable.
 
     push_swap
 
-Other commands:
+Run the program by providing integers as arguments
 
-    make clean
-    make fclean
-    make re
+    ./push_swap 3 2 5 4
 
-------------------------------------------------------------------------
 
-# Usage
+# Resources
 
-Example:
-
-    ./push_swap 3 2 5 1 4
-
-Example output:
-
-    pb
-    ra
-    pb
-    sa
-    pa
-    pa
-
-------------------------------------------------------------------------
-
-# Learning Objectives
-
-This project helps develop:
-
--   Algorithmic thinking
--   Optimization techniques
--   Data structure manipulation
--   Memory management in C
-
-------------------------------------------------------------------------
-
-# Author
-
-Project developed as part of the **42 School curriculum**.
+1.  Students, for the alfgorithms choices
+2.  push swap visualizer to test https://push-swap42-visualizer.vercel.app/
+3.  Oceano youtube video https://www.youtube.com/watch?v=OaG81sDEpVk
+4.  Stackoverflow https://stackoverflow.com/questions/75100698/push-swap-what-is-the-most-efficient-way-to-sort-given-values-using-a-limited-s
